@@ -33,7 +33,7 @@ function render(variables = {}) {
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
+          <h1>${variables.name}</h1>
           <h2>Web Developer</h2>
           <h3>Miami, USA</h3>
           <ul class="position-right">
@@ -75,6 +75,7 @@ window.onload = function() {
   document.querySelectorAll(".picker").forEach(function(elm) {
     elm.addEventListener("change", function(e) {
       // <- add a listener to every input
+
       const attribute = e.target.getAttribute("for"); // when any input changes, collect the value
       let values = {};
       values[attribute] =
